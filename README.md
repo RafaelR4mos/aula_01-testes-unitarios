@@ -1,7 +1,7 @@
 # Aula 01 Teste unitários ⚙️
 Aula 01 de testes unitários exemplos de funções com testes, tutorial de instalação.
 
-material da aula: [Link](https://docs.google.com/presentation/d/1ND5ZDO-pgHf-WDv96PQ4QSlfUoKI3u7PBdFw7qBJS-Q/edit?usp=sharing)
+📕Material da aula: [Link](https://docs.google.com/presentation/d/1ND5ZDO-pgHf-WDv96PQ4QSlfUoKI3u7PBdFw7qBJS-Q/edit?usp=sharing)
 
 ## Como utilizar o jest neste repo
 1. Rode o comando:
