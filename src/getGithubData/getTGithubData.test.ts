@@ -1,10 +1,8 @@
-import { enableFetchMocks } from "jest-fetch-mock";
+import fetchMock from "jest-fetch-mock";
 import { getData } from "./getGithubData";
 import "dotenv/config";
-import fetchMock from "jest-fetch-mock";
 
-// Necessário para o funcionamento dos mocks
-enableFetchMocks();
+fetchMock.enableMocks();
 
 describe("getGithubData", () => {
   const username = "RafaelR4mos";
