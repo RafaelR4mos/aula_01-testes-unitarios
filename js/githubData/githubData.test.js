@@ -1,11 +1,9 @@
-import { getGithubData } from "../githubDataAxios/githubDataAxios";
+import { getGithubData } from "./githubData";
 import { expect } from "@jest/globals";
-import { enableFetchMocks } from "jest-fetch-mock";
 
-const fetchMock = enableFetchMocks();
+import fetchMock from "jest-fetch-mock";
 
-
-describe("GetGithubData Function", () => {
+describe('testing api', () => {
   const username = "RafaelR4mos";
   const correctURL = "https://api.github.com/users"
   const apiFakeData = {
@@ -13,30 +11,24 @@ describe("GetGithubData Function", () => {
     url: "https://api.github.com/users/RafaelR4mos",
     reposUrl: "https://api.github.com/users/RafaelR4mos/repos",
   }
-
   beforeEach(() => {
-    fetchMock.resetMocks();
-  });
-
-
-  test("get data from github with the correct URL", () => {
-    fetchMock.mockResponseOnce(JSON.stringify(apiFakeData))
-    getGithubData(username);
-    expect(fetchMock.mock.calls[0][0]).toEqual(`${correctURL}/${username}`)
+    fetchMock.resetMocks()
+    fetchMock.enableMocks();
   })
 
-  test("Should call the API just once", () => {
-    fetchMock.mockResponseOnce(JSON.stringify(apiFakeData));
-    getGithubData(username);
-    expect(fetchMock.calls.length).toBe(1);
-  });
+  it('calls github and returns data to me', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify({
+      login: "RafaelR4mos",
+      url: "https://api.github.com/users/RafaelR4mos",
+      reposUrl: "https://api.github.com/users/RafaelR4mos/repos",
+    }))
 
-  test("Should call the API with the correct user data", async () => {
-    fetchMock.mockResponseOnce(JSON.stringify(apiFakeData));
+    //assert on the response
+    const res = await getGithubData(username)
+    expect(res).toEqual(apiFakeData);
 
-    const response = await getGithubData(username);
-
-    expect(response).toHaveProperty("login", username);
-    expect(response).toEqual(apiFakeData);
-  });
+    //assert on the times called and arguments given to fetchMock
+    expect(fetchMock.mock.calls.length).toEqual(1)
+    expect(fetchMock.mock.calls[0][0]).toEqual(`${correctURL}/${username}`)
+  })
 })
