@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1691414486122" clover="3.2.0">
-  <project timestamp="1691414486122" name="All files">
-    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="8" coveredelements="8" complexity="0" loc="5" ncloc="5" packages="2" files="2" classes="2"/>
+<coverage generated="1691523177228" clover="3.2.0">
+  <project timestamp="1691523177228" name="All files">
+    <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="3" elements="17" coveredelements="9" complexity="0" loc="11" ncloc="11" packages="3" files="3" classes="3"/>
     <package name="average">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="average.js" path="D:\vemser12\tech-up-challenge\testes\js\average\average.js">
@@ -9,6 +9,18 @@
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="githubDataAxios">
+      <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="githubDataAxios.js" path="D:\vemser12\tech-up-challenge\testes\js\githubDataAxios\githubDataAxios.js">
+        <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
       </file>
     </package>
     <package name="sum">

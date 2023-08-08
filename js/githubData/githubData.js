@@ -1,6 +1,6 @@
 const githubAPI = "https://api.github.com/users";
 
-async function getGithubData(username) {
+export async function getGithubData(username) {
   const response = await fetch(`${githubAPI}/${username}`);
   const data = await response.json();
 
@@ -10,5 +10,3 @@ async function getGithubData(username) {
     throw new Error("Ocorreu um erro!");
   }
 }
-
-module.exports = getGithubData;
